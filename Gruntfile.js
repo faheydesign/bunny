@@ -2,13 +2,9 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
   grunt.initConfig({
     clean: {
@@ -26,16 +22,6 @@ module.exports = function(grunt) {
         src: ['*.html', 'css/*.css','img/*', 'media/*', 'data.json'],
         dest: 'build/',
         filter: 'isFile'
-      }
-    },
-    browserify: {
-      dev: {
-        options: {
-          transform: ['debowerify'],
-          debug: true
-        },
-        src: ['app/js/app.js'],
-        dest: 'build/bundle.js'
       }
     },
     express: {
@@ -76,39 +62,9 @@ module.exports = function(grunt) {
     watch: {
       files: ['server.js', 'routes/**/*.js', 'app/**/*'],
       tasks: ['build']
-    },
-    uglify: {
-      dist: {
-        files: {
-          'dist/bundle.js': ['build/bundle.js']
-        }
-      }
-    },
-    htmlmin: {
-      dist: {
-        options: {
-          removeComments: true,
-          collapseWhitespace: true
-        },
-        files: {
-          'dist/index.html': 'app/index.html'
-        }
-      }
-    },
-    cssmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'app/css/',
-          src: ['*.css'],
-          dest: 'dist/css/'
-        }]
-      }
     }
   });
-  grunt.registerTask('build', ['clean:dev', 'browserify:dev', 'copy:dev']);
+  grunt.registerTask('build', ['clean:dev','copy:dev']);
   grunt.registerTask('default', ['jshint', 'build', 'express:dev', 'watch']);
-  grunt.registerTask('test', ['browserify:test', 'mocha:backbonetest']);
-  grunt.registerTask('shrink', ['browserify:dev', 'uglify', 'htmlmin:dist', 'cssmin:dist']);
   grunt.registerTask('production', ['clean:dist', 'shrink']);
 };

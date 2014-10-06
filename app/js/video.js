@@ -47,5 +47,8 @@ var videoFeature = {
       .addClass('fade');
   }
 
-
 };
+
+(function() {
+  videoFeature.init();
+})();
