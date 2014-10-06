@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       dev: {
         expand: true,
         cwd: 'app/',
-        src: ['*.html', 'css/*.css','img/*', 'media/*', 'data.json'],
+        src: ['*.html', 'css/*.css','img/*', 'media/*', 'data.json', 'js/*'],
         dest: 'build/',
         filter: 'isFile'
       }
@@ -36,28 +36,10 @@ module.exports = function(grunt) {
     },
 
     jshint: {
+      all: ['app/js/**/*.js'],
       options: {
-        curly: true,
-        eqeqeq: true,
-        eqnull: true,
-        browser: true,
-        node: true,
-        globals: {
-          'describe'   : false,
-          'it'         : false,
-          'to'         : false,
-          'ok'         : false,
-          'be'         : false,
-          'before'     : false,
-          'beforeEach' : false,
-          'after'      : false,
-          'afterEach'  : false,
-          'equal'      : false,
-          'template'   : false
-        },
-        "jquery"    : true
-      },
-      all: ['app/js/**/*.js']
+        jshintrc: true
+      }
     },
     watch: {
       files: ['server.js', 'routes/**/*.js', 'app/**/*'],
