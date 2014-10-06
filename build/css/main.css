@@ -1,0 +1,82 @@
+body{
+    background: hsl(0, 0%, 0%) no-repeat 50% 50% fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    min-height: 500px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    line-height: 170%;
+}
+#content{
+    background: #fff;
+    width:50%;
+}
+.video-container{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1;
+}
+.fade {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+button{
+    color:#fff;
+    background:hsl(197, 99%, 36%);
+    font-size: 20px;
+    border:none;
+    padding: 12px 22px;
+}
+
+.btn-skip-video{
+    position: absolute;
+    bottom:10%;
+    right:10%;
+    z-index: 10;
+    opacity: 1;
+}
+video{
+    width:100%;height: 100%;
+}
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
