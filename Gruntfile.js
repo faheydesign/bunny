@@ -31,20 +31,11 @@ module.exports = function(grunt) {
     browserify: {
       dev: {
         options: {
-          transform: ['debowerify', 'hbsfy'], //mjg - added hbsfy
+          transform: ['debowerify'],
           debug: true
         },
-        src: ['app/js/**/*.js'],
+        src: ['app/js/app.js'],
         dest: 'build/bundle.js'
-      },
-      //mjg - added so that tests get browserified and can be viewed in chrome
-      test: {
-        options: {
-          transform: ['hbsfy', 'debowerify'],
-          debug: true
-        },
-        src: ['test/mocha/**/*.js'],
-        dest: 'test/testbundle.js'
       }
     },
     express: {
@@ -76,11 +67,11 @@ module.exports = function(grunt) {
           'after'      : false,
           'afterEach'  : false,
           'equal'      : false,
-          'jquery' : false,
           'template'   : false
         },
+        "jquery"    : true
       },
-      all: ['Gruntfile.js', 'server.js', 'routes/**/*.js', 'app/js/**/*.js']
+      all: ['app/js/**/*.js']
     },
     watch: {
       files: ['server.js', 'routes/**/*.js', 'app/**/*'],
