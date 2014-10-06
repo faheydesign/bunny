@@ -1,5 +1,4 @@
 'use strict';
-$(document).ready(function(){
 
   // $.ajax({
   //   dataType: "json",
@@ -30,11 +29,10 @@ $(document).ready(function(){
 
 
 
-var snd = new Audio("./media/aperfectday.mp3"); // buffers automatically when created
+  var snd = new Audio("./media/aperfectday.mp3"); // buffers automatically when created
 
 
   $('#content').on('click', '.btn-audio', function() {
     snd.play();
     console.log(snd);
   });
-});
