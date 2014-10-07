@@ -2,10 +2,7 @@
 var VideoFeature = {
 
   jsonObj: {},
-
-  settings: {
-
-  },
+  sound:{},
   init: function() {
     this.getData();
     this.bindUIActions();
@@ -47,8 +44,15 @@ var VideoFeature = {
       '<div id="content">'+
       '<h1>'+ self.jsonObj.header +'</h1>'+
       '<p>'+ self.jsonObj.description +'</p>'+
+      '<audio id="sound" preload="auto" src='+ self.jsonObj.audio + '></audio>'+
       '<button class="btn-audio">play audio</button></div>')
       .addClass('fade');
+    this.bindAudio();
+  },
+  bindAudio: function(){
+    $('#content').on('click', '.btn-audio', function() {
+      $('#sound').get(0).play();
+    });
   }
 
 };
