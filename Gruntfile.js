@@ -48,5 +48,4 @@ module.exports = function(grunt) {
   });
   grunt.registerTask('build', ['clean:dev','copy:dev']);
   grunt.registerTask('default', ['jshint', 'build', 'express:dev', 'watch']);
-  grunt.registerTask('production', ['clean:dist', 'shrink']);
 };
