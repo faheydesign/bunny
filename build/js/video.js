@@ -20,7 +20,8 @@ var VideoFeature = {
     var container = $('.video-container');
     container.append('<video id="bunnyvideo" ' +
       'width="100%" height="100%">' +
-      '<source src=' + VideoFeature.jsonObj.video + ' type="video/ogg">' +
+      '<source src=' + VideoFeature.jsonObj.video.webm + ' type="video/webm; codecs=vp8,vorbis">' +
+      '<source src=' + VideoFeature.jsonObj.video.mp4 + ' type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">' +
       'Your browser does not support the video tag.' +
       '</video>');
     $('#bunnyvideo').get(0).play();
@@ -42,7 +43,7 @@ var VideoFeature = {
     $('body').css('background-image','url(' + self.jsonObj.background + ')');
     button.parent().empty().append(
       '<div id="content">'+
-      '<h1>'+ self.jsonObj.header +'</h1>'+
+      '<img class="logo" src='+ self.jsonObj.header.img +' alt='+ self.jsonObj.header.alt +'>'+
       '<p>'+ self.jsonObj.description +'</p>'+
       '<audio id="sound" preload="auto" src='+ self.jsonObj.audio + '></audio>'+
       '<button class="btn-audio">play audio</button></div>')

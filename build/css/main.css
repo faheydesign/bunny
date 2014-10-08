@@ -10,10 +10,18 @@ body{
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     line-height: 170%;
+    overflow: hidden;
 }
 #content{
     background: #fff;
-    width:50%;
+    width:40%;
+    margin: 4em;
+    padding:4em;
+    text-align: center;
+}
+#content p{
+    margin:1.5em auto;
+    text-align: left;
 }
 .video-container{
     position: absolute;
@@ -54,19 +62,29 @@ body{
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+.logo{
 
+}
 button{
-    color:#fff;
+    color:#c3e9f8;
     background:hsl(197, 99%, 36%);
     font-size: 20px;
     border:none;
     padding: 12px 22px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+}
+button:hover{
+    color:#fff;
+    background-color:#026b95;
 }
 
 .btn-skip-video{
     position: absolute;
-    bottom:10%;
-    right:10%;
+    bottom: 12%;
+    left: 2%;
     z-index: 10;
     opacity: 1;
 }
@@ -79,4 +97,3 @@ img,
 video {
     vertical-align: middle;
 }
-
