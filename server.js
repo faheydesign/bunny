@@ -6,6 +6,6 @@ app.use(express.static(__dirname + (process.env.STATIC_DIR || '/build')));
 
 var server = http.createServer(app);
 
-server.listen(process.env.PORT || 5000, function() {
-  console.log('Server running on port 5000');
+server.listen(process.env.PORT || 3000, function() {
+  console.log('Server running on port 3000');
 });

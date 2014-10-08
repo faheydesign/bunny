@@ -36,7 +36,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      all: ['app/js/**/*.js'],
+      all: ['app/js/video.js'],
       options: {
         jshintrc: true
       }
