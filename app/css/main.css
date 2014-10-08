@@ -1,3 +1,4 @@
+/* LAYOUT **********/
 body{
     background: hsl(0, 0%, 0%) no-repeat 50% 50% fixed;
     -webkit-background-size: cover;
@@ -11,18 +12,18 @@ body{
     font-size: 20px;
     line-height: 170%;
     overflow: hidden;
+    min-width: 800px;
 }
 #content{
     background: #fff;
     width:50%;
-    margin: 4em;
-    padding:2em 2em 4em;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    margin:5%;
+    padding:3%;
+    text-align: center;
 }
 #content p{
     margin-top:1.5em;
+    text-align: left;
 }
 .video-container{
     position: absolute;
@@ -31,6 +32,49 @@ body{
     width:100%;
     z-index:1;
 }
+/* VIDEO **********/
+
+video{
+    width:100%;height: 100%;
+}
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/* BUTTONS **********/
+
+button{
+    color:#c3e9f8;
+    background:hsl(197, 99%, 36%);
+    font-size: 20px;
+    border:none;
+    padding: 12px 22px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+}
+button:hover{
+    color:#fff;
+    background-color:#026b95;
+}
+
+button.btn-skip-video{
+    position: absolute;
+    bottom: 12%;
+    left: 2%;
+    z-index: 10;
+    opacity: 1;
+}
+
+/* EFFECTS **********/
+
 .fade {
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -63,41 +107,12 @@ body{
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-.logo{
 
-}
-button{
-    color:#c3e9f8;
-    background:hsl(197, 99%, 36%);
-    font-size: 20px;
-    border:none;
-    padding: 12px 22px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-transition: all 500ms ease-in;
-    -moz-transition: all 500ms ease-in;
-    -o-transition: all 500ms ease-in;
-    transition: all 500ms ease-in;
-}
-button:hover{
-    color:#fff;
-    background-color:#026b95;
-}
-
-.btn-skip-video{
-    position: absolute;
-    bottom: 12%;
-    left: 2%;
-    z-index: 10;
-    opacity: 1;
-}
-video{
-    width:100%;height: 100%;
-}
-audio,
-canvas,
-img,
-video {
-    vertical-align: middle;
+@media all and (max-width: 1000px) {
+    body{
+        font-size: 1.1em;
+    }
+    .logo {
+        width: 75%
+    }
 }
