@@ -40,7 +40,7 @@ var VideoFeature = {
   },
   displayContent: function(button){
     var self = VideoFeature;
-    $('body').css('background-image','url(' + self.jsonObj.background + ')');
+    $('body').hide().css('background-image','url(' + self.jsonObj.background + ')');
     button.parent().empty().append(
       '<div id="content">'+
       '<img class="logo" src='+ self.jsonObj.header.img +' alt='+ self.jsonObj.header.alt +'>'+
@@ -48,6 +48,7 @@ var VideoFeature = {
       '<audio id="sound" preload="auto" src='+ self.jsonObj.audio + '></audio>'+
       '<button class="btn-audio">play audio</button></div>')
       .addClass('fade');
+    $('body').show();
     this.bindAudio();
   },
   bindAudio: function(){
