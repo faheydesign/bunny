@@ -1,7 +1,13 @@
 {
-  "video": "http://mirrorblender.top-ix.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_stereo.ogg",
+  "video": {
+           "webm": "https://s3-us-west-2.amazonaws.com/bunnyvideos/big_buck_bunny_1080p_stereo.webm",
+            "mp4" : "https://s3-us-west-2.amazonaws.com/bunnyvideos/big_buck_bunny_1080p_stereo.mp4"
+  },
   "audio": "../media/aperfectday.mp3",
   "background": "../img/bunny_bg.jpg",
-  "header": "Big Bunny",
+  "header": {
+    "img": "../img/logo.jpg",
+    "alt": "Big Buck Bunny"
+  },
   "description": "Seitan mumblecore bespoke asymmetrical salvia fanny pack. Art party Shoreditch McSweeney's, synth wayfarers Blue Bottle narwhal chia chillwave mlkshk bespoke. Leggings letterpress mlkshk Schlitz, fanny pack readymade narwhal Vice Wes Anderson jean shorts blog synth irony dreamcatcher chambray."
 }
